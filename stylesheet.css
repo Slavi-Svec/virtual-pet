@@ -13,14 +13,13 @@ body {
     padding: 0;
     margin: 10;
     background: blue;
-    background-image: url("sammyteen.png");
+    background-image: url("squirm_5.png");
 }
 .game-console {
     display: grid;
     justify-content: center;
     align-content: center;
-    padding: 30px;
-    
+    padding: 30px; 
     min-height: 50vh;
     grid-template-columns: repeat(4, 130px);
     grid-template-rows: repeat(4, 150 px); 
