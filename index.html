@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Sammy the Squirm </title>
+    <title>Sammy the Squirm</title>
     <!-- here im trying to add a icon  (favicon) image into the tabs in chrome browser bleow  -->
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
     <meta charset="UTF-8">
@@ -9,38 +9,29 @@
     <link rel="stylesheet" href="stylesheet.css" type="text/css">
     <!-- this is the code for the clock feature but i have moved id down with the button divs
     <!-- <div id="clock-face"></div>
-    <body onload="setInterval('updateTime()',1000)"> -->
-    <script src="main.js"></script>
-
-   
 
   </head>
   <body>
     <!-- below is the div for the demo animation  -->
-      <div><center><img id="sammy" style="position: absolute;" src="squirm_2.png"></center></div>
+    <body onload="setInterval('updateTime()',1000)">
+    <div><img id="sammy" src="squirm_2.png"></div>
       <!-- <div class="title"><centre>Sammy the Squirm</centre></div> -->
     <div class="game-console">
-        <div id="clock-face"></div>
-        <body onload="setInterval('updateTime()',1000)">
-        <div class="big-screen">
-          <!-- <div class="second-screen">0</div>
-          <div class="third-screen">0</div>
-          <div class="clock-screen">0</div> -->
-        </div>
-        <button class="food">feed</button>
-        <button class="clean">clean</button>
-        <button class="train">train</button>
-        <button class="sleep">sleep</button>
-        <button class="info">info</button>
-        <button onclick="toggleClock()"id="clock-button">clock</button>
-        <!-- <button class="clock-btn">clock</button> -->
-        <button class="start">start</button>
-         <button class="reset">re-set</button>
-
+      <div id="clock-face"></div>
+      <button class="food">feed</button>
+      <button class="clean">clean</button>
+      <button class="train">train</button>
+      <button class="sleep">sleep</button>
+      <button class="info">info</button>
+      <button id="clock-button">clock</button>
+      <!-- <button class="clock-btn">clock</button> -->
+      <button class="start">start</button>
+      <button class="reset">re-set</button>
     </div>
-
+    <script src="main.js" async></script>
   </body>
 </html>
+
 
 
 

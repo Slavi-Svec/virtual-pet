@@ -1,20 +1,12 @@
-/* .title {
-    font-size: 50px;
-    color: #48cf0A;
-} */
-
-*, *::before, *::after {
-  box-sizing: border-box; 
-  font-family: comic sans MS;
-  font-weight: normal;
-}
-
 body {
+    font-family: comic sans MS;
+    font-weight: normal;
     padding: 0;
     margin: 10;
     background: blue;
-    background-image: url("squirm_5.png");
+    background-image: url('squirm_5.png');
 }
+
 .game-console {
     display: grid;
     justify-content: center;
@@ -22,8 +14,9 @@ body {
     padding: 30px; 
     min-height: 50vh;
     grid-template-columns: repeat(4, 130px);
-    grid-template-rows: repeat(4, 150 px); 
+    grid-template-rows: repeat(4, 150px); 
 }
+
 .game-console > button {
     cursor: pointer;
     font-size: 2rem;
@@ -31,16 +24,19 @@ body {
     outline: nine;
     background-color: pink; 
 }
+
 .game-console > button:hover {
     background-color: antiquewhite;
 }
+
 .big-screen {
     grid-column: 1 / -1;
-    /* background-color: lightgoldenrodyellow; */
+    / background-color: lightgoldenrodyellow; /
     background-color: white;
     height: 400px;
  
 }
+
 #clock-face {
     font-family: comic sans MS;
     text-align: center;
@@ -52,12 +48,7 @@ body {
     top: 50%;
     margin: 20px auto;
 }
-/* #clock-face span {
-    padding: 20px; */
-}
 
 
 
 
-
-  /* Comic Sans MS; */
