@@ -11,10 +11,10 @@ body {
     display: grid;
     justify-content: center;
     align-content: center;
-    padding: 30px; 
+    padding: 30px;
     min-height: 50vh;
     grid-template-columns: repeat(4, 130px);
-    grid-template-rows: repeat(4, 150px); 
+    grippp
 }
 
 .game-console > button {
@@ -22,7 +22,7 @@ body {
     font-size: 2rem;
     border: 2px solid whitesmoke;
     outline: nine;
-    background-color: pink; 
+    background-color: pink;
 }
 
 .game-console > button:hover {
@@ -51,4 +51,67 @@ body {
 
 
 
+css -
 
+body {
+    font-family: comic sans MS;
+    background: blue;
+    background-image: url('squirm_5.png');
+}
+
+#screen {
+    height: 400px;
+    width: 520px;
+    background: white;
+}
+
+.game-button {
+    height: 60px;
+    cursor: pointer;
+    font-size: 2rem;
+    border: 2px solid whitesmoke;
+    background-color: pink; 
+}
+
+
+/* #wrapper {
+    border: 1px red solid;
+    height: 100%;
+} */
+
+.game-console {
+    display: grid;
+    width: 500px;
+    grid-template-columns: repeat(4, 130px);
+}
+
+.game-console > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 2px solid whitesmoke;
+    outline: nine;
+    background-color: pink; 
+}
+
+.game-console > button:hover {
+    background-color: antiquewhite;
+} */
+
+/* .big-screen {
+    grid-column: 1 / -1;
+    background-color: white;
+    height: 400px;
+ 
+} */
+
+/* #clock-face {
+    font-family: comic sans MS;
+    text-align: center;
+    font-size: 4em;
+    color: red;
+    display: none;
+    position: absolute;
+    left: 36%;
+    top: 50%;
+    margin: 20px auto;
+}
