@@ -1,11 +1,8 @@
 // this is the code that animates sammy icon in the game screen.it is just a demo and will need to be completed thruout the program
-const timer = window.setInterval(moveSammy, 250);
 
 function moveSammy() {
-    document.getElementById('sammy').style.center = Math.random() * 200 + 'px';
-    document.getElementById('sammy').style.top = Math.random() * 200 + 'px';
-    // document.getElementById('sammy').style.left=Math.random()*500+'px';
-    // document.getElementById('sammy').style.right=Math.random()*500+'px';
+    document.getElementById('egg-image').style.center = Math.random() * 200 + 'px';
+    document.getElementById('egg-image').style.top = Math.random() * 100 + 'px';
 }
 
 // this is all the code for the clock feature in the game face
@@ -37,35 +34,37 @@ function updateTime() {
 }
 
 const clockButtonElement = document.getElementById('clock-button');
-clockButtonElement.addEventListener('click', () => {
-    const theClock = document.getElementById('clock-face');
-    const displaySettings = theClock.style.display;
-    const clockButton = document.getElementById('clock-button');
+const theClock = document.getElementById('clock-face');
+const clockButton = document.getElementById('clock-button');
 
-    if (displaySettings == 'block') {
-        theClock.style.display = 'none';
-        clockButton.innerHTML = 'clock';
-    } else {
-        theClock.style.display = 'block';
-        clockButton.innerHTML = 'clock';
-    } 
+clockButtonElement.addEventListener('click', () => {
+    setInterval(() => {
+        updateTime();
+    }, 200);
+    clockButton.innerHTML = 'clock';
 });
 
-// function toggleClock() {
-//     const theClock = document.getElementById('clock-face');
-//     const displaySettings = theClock.style.display;
-//     // const clockButton = document.getElementById('clock-button');
 
-//     if (displaySettings == 'block') {
-//         theClock.style.display = 'none';
-//         clockButton.innerHTML = 'clock';
-//     } else {
-//         theClock.style.display = 'block';
-//         clockButton.innerHTML = 'clock';
-//     }
-// }
+const startButton = document.getElementById('start');
+const eggImage = document.getElementById('egg-image');
+const message = document.getElementById('message');
 
+startButton.addEventListener('click', () => {
+    eggImage.style.visibility = 'visible';
+    message.innerHTML = 'Please wait five minutes for your egg to hatch';
+    setInterval(() => {
+        updateTime();
+    }, 200);
+    clockButton.innerHTML = 'clock';
 
+    setTimeout(() => {
+        eggImage.src = 'images/cracked-egg.png';
+        message.innerHTML = '';
+    }, 2000);
 
-
+    setTimeout(() => {
+        eggImage.src = 'images/squirm_2.png';
+        setInterval(moveSammy, 250);
+    }, 4000);
+})
 
