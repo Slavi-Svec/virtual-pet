@@ -1,0 +1,96 @@
+body {
+    font-family: comic sans MS;
+    background: blue;
+    background-image: url('../images/squirm_5.png');
+}
+
+.game-console {
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#screen {
+    position: relative;
+    text-align: center;
+    height: 525px;
+    width: 520px;
+    background: white;
+}
+
+.console-button {
+    position: absolute;
+    bottom: 0;
+    width: 24%;
+    height: 60px;
+    cursor: pointer;
+    font-size: 2rem;
+    border: 2px solid whitesmoke;
+    background-color: pink;
+}
+
+.bottom-grid,
+.top-grid {
+  display: flex;
+}
+
+.col {
+    flex: 1;
+    height: 60px;
+    cursor: pointer;
+    font-size: 2rem;
+    border: 2px solid whitesmoke;
+    background-color: pink;
+}
+
+#button-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+#egg-image {
+    height: 100px;
+    position: relative;
+    top: 220px;
+    visibility: hidden;
+}
+
+#clock-message-wrapper {
+    padding-top: 10px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+#message {
+    margin-top: auto;
+}
+
+#stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    width: 100%;
+}
+
+.box {
+    align-self: flex-end;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    height: 200px;
+    margin: 0 auto 0 auto;
+    transform-origin: bottom;
+    width: 200px;
+}
+
+.bounce {
+    animation-name: bounce;
+    animation-timing-function: linear;
+}
+
+@keyframes bounce {
+    50%  { transform: translateY(-300px); }
+}

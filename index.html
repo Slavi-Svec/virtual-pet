@@ -2,17 +2,20 @@
 <html>
   <head>
     <title>Sammy the Squirm</title>
-    <!-- here im trying to add a icon  (favicon) image into the tabs in chrome browser bleow  -->
     <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
     <meta charset="UTF-8">
     <title>title</title>
-    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="styles/stylesheet.css" type="text/css">
     <body>
       <div class="game-console">
         <section id="screen">
-          <div id="clock-face"></div>
-          <div id="message"></div>
-          <img id="egg-image" src="images/egg.png">
+          <div id="clock-message-wrapper">
+            <div id="clock-face"></div>
+            <div id="message"></div>
+          </div>
+          <div id="stage">
+            <img id="egg-image" src="images/egg.png">
+          </div>
           <div id="button-wrapper">
             <div class="top-grid">
               <button class="col">feed</button>
@@ -29,6 +32,6 @@
           </div>
         </section>
       </div>
-    <script src="main.js" async></script>
+    <script src="js/main.js" async></script>
   </body>
 </html>
