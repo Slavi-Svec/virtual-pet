@@ -41,3 +41,10 @@ startButton.addEventListener('click', () => {
         setInterval(moveSammy, 250);
     }, 4000);
 })
+
+const reset = document.getElementById('reset');
+
+reset.addEventListener('click', () => {
+    document.getElementById('egg-image').setAttribute('class', '');
+    eggImage.src = 'images/cracked-egg.png';
+})
