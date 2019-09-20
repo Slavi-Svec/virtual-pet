@@ -5,6 +5,7 @@ body {
 }
 
 .game-console {
+    font-family: comic sans MS;
     height: 700px;
     display: flex;
     justify-content: center;
@@ -12,6 +13,7 @@ body {
 }
 
 #screen {
+    font-family: comic sans MS;
     position: relative;
     text-align: center;
     height: 525px;
@@ -20,6 +22,7 @@ body {
 }
 
 .console-button {
+    font-family: comic sans MS;
     position: absolute;
     bottom: 0;
     width: 24%;
@@ -32,10 +35,12 @@ body {
 
 .bottom-grid,
 .top-grid {
+    font-family: comic sans MS;
   display: flex;
 }
 
 .col {
+    font-family: comic sans MS;
     flex: 1;
     height: 60px;
     cursor: pointer;
