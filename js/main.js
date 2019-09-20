@@ -45,6 +45,12 @@ startButton.addEventListener('click', () => {
 const reset = document.getElementById('reset');
 
 reset.addEventListener('click', () => {
-    document.getElementById('egg-image').setAttribute('class', '');
-    eggImage.src = 'images/cracked-egg.png';
+    const userHasClickedOK = confirm('are you sure you want to re-set?');
+
+    if (userHasClickedOK) {
+        document.getElementById('egg-image').setAttribute('class', '');
+        eggImage.src = 'images/cracked-egg.png';
+    }
 })
+
+
