@@ -15,12 +15,38 @@ clockButtonElement.addEventListener('click', () => {
     clockButton.innerHTML = 'clock';
 });
 
+let sammy = {
+    health: 100,
+}
 
 const startButton = document.getElementById('start');
 const eggImage = document.getElementById('egg-image');
 const message = document.getElementById('message');
 
+const healthDots = document.getElementsByClassName('health-dot');
+
 startButton.addEventListener('click', () => {
+    setInterval(() => {
+        for (let i = 0; i < healthDots.length; i++) {
+            if (sammy.health === 80) {
+                healthDots[0].style.display = 'none'
+            }
+            if (sammy.health === 60) {
+                healthDots[1].style.display = 'none'
+            }
+            if (sammy.health === 40) {
+                healthDots[2].style.display = 'none'
+            }
+            if (sammy.health === 20) {
+                healthDots[3].style.display = 'none'
+            }
+            if (sammy.health === 0) {
+                healthDots[4].style.display = 'none'
+            }
+        }
+        sammy.health = sammy.health - 20
+    }, 5000);
+
     eggImage.style.visibility = 'visible';
     message.innerHTML = 'Please wait five minutes for your egg to hatch';
     setInterval(() => {
@@ -38,7 +64,6 @@ startButton.addEventListener('click', () => {
         document.getElementById('stage').setAttribute('class', 'test');
         document.getElementById('egg-image').setAttribute('class', 'box bounce');
         eggImage.src = 'images/squirm_2.png';
-        setInterval(moveSammy, 250);
     }, 4000);
 })
 
@@ -52,5 +77,7 @@ reset.addEventListener('click', () => {
         eggImage.src = 'images/cracked-egg.png';
     }
 })
+
+
 
 
