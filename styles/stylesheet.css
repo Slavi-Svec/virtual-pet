@@ -56,8 +56,6 @@ body {
 }
 
 #egg-image {
-    /* height: 200px;
-    width: 200px; */
     position: relative;
     top: 180px;
     visibility: hidden;
@@ -115,6 +113,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    visibility: hidden;
 }
 
 .health-dot {
@@ -124,4 +123,3 @@ body {
     border-radius: 25%;
     margin: 0.5px;
 }
-
