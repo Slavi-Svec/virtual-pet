@@ -22,8 +22,10 @@ let sammy = {
 const startButton = document.getElementById('start');
 const eggImage = document.getElementById('egg-image');
 const message = document.getElementById('message');
+const healthBar =document.getElementById('health-bar');
 
 const healthDots = document.getElementsByClassName('health-dot');
+const back = document.getElementById('screen');
 
 startButton.addEventListener('click', () => {
     setInterval(() => {
@@ -36,18 +38,21 @@ startButton.addEventListener('click', () => {
             }
             if (sammy.health === 40) {
                 healthDots[2].style.display = 'none'
+                document.body.style.backgroundColor =  "#AA0000";
             }
             if (sammy.health === 20) {
                 healthDots[3].style.display = 'none'
             }
             if (sammy.health === 0) {
                 healthDots[4].style.display = 'none'
+                document.body.style.background =  "#AA0000";
             }
         }
         sammy.health = sammy.health - 20
     }, 5000);
 
     eggImage.style.visibility = 'visible';
+    healthBar.style.visibility = 'visible';
     message.innerHTML = 'Please wait five minutes for your egg to hatch';
     setInterval(() => {
         const clock = document.getElementById('clock-face');
@@ -79,5 +84,8 @@ reset.addEventListener('click', () => {
 })
 
 
+const feedMe = document.getElementById('feed');
 
+feedMe.addEventListener('click', () => {
 
+})
