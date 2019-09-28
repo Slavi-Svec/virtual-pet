@@ -53,7 +53,7 @@ startButton.addEventListener('click', () => {
 
     eggImage.style.visibility = 'visible';
     healthBar.style.visibility = 'visible';
-    message.innerHTML = 'Please wait five minutes for your egg to hatch';
+    message.innerHTML = 'Please wait for the egg to hatch';
     setInterval(() => {
         const clock = document.getElementById('clock-face');
         clock.innerHTML = getTime();
@@ -79,13 +79,12 @@ reset.addEventListener('click', () => {
 
     if (userHasClickedOK) {
         document.getElementById('egg-image').setAttribute('class', '');
-        eggImage.src = 'images/cracked-egg.png';
+        eggImage.src = 'images/start.png';
     }
 })
-
 
 const feedMe = document.getElementById('feed');
 
 feedMe.addEventListener('click', () => {
-
+document.getElementById('food-chicken').style.display='block';
 })

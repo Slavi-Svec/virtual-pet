@@ -59,7 +59,10 @@ body {
     position: relative;
     top: 180px;
     visibility: hidden;
+}
 
+#food-chicken{
+   display: none;
 }
 
 #clock-message-wrapper {
