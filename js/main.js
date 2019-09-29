@@ -4,6 +4,8 @@ function getTime() {
     return `${date.toTimeString().substring(0, 9)} ${amOrPm}`;
 }
 
+const SAMMYMAXHEALTH = 100;
+
 const clockButtonElement = document.getElementById('clock-button');
 const clock = document.getElementById('clock-face');
 const clockButton = document.getElementById('clock-button');
@@ -52,10 +54,11 @@ startButton.addEventListener('click', () => {
                 document.body.style.background =  'black';
                 eggImage.style.visibility = 'hidden';
                 graveImage.style.visibility = 'visible';
+                backScreen.style.background =  'black';
             }
         }
         sammy.health = sammy.health - 20
-    }, 5000);
+    }, 2000);
 
     eggImage.style.visibility = 'visible';
     healthBar.style.visibility = 'visible';
@@ -92,18 +95,40 @@ reset.addEventListener('click', () => {
 const feedMe = document.getElementById('feed');
 
 feedMe.addEventListener('click', () => {
-document.getElementById('food-chicken').style.display='block';
+    if (sammy.health >= SAMMYMAXHEALTH) {
+        return;
+    } else {
+        sammy.health = sammy.health + 20;
+        if (sammy.health === 80) {
+            healthDots[0].style.display = 'block'
+        }
+        if (sammy.health === 60) {
+            healthDots[1].style.display = 'block'
+        }
+        if (sammy.health === 40) {
+            healthDots[2].style.display = 'block'
+        }
+        if (sammy.health === 20) {
+            healthDots[3].style.display = 'block'
+        }
+    }
+
+    document.getElementById('food-chicken').style.display = 'block';
+
+    setInterval(() => {
+        document.getElementById('food-chicken').style.display = 'none';
+    }, 1000);
 })
 
 
 // this code below is the strobe light featture
 
-var bodyElement = document.querySelector("body");
+const bodyElement = document.querySelector('body');
 
-var requestAnimationFrame = window.requestAnimationFrame ||
-                            window.mozRequestAnimationFrame ||
-                            window.webkitRequestAnimationFrame ||
-                            window.msRequestAnimationFrame;
+const requestAnimationFrame = window.requestAnimationFrame ||
+                              window.mozRequestAnimationFrame ||
+                              window.webkitRequestAnimationFrame ||
+                              window.msRequestAnimationFrame;
 
 // var delay = 0;
 
@@ -120,31 +145,26 @@ function changeColor() {
 changeColor();
 
 function getRandomColor() {
-    var r = Math.floor(Math.random()*256);
-    var g = Math.floor(Math.random()*256);
-    var b = Math.floor(Math.random()*256);
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
 
     var hexR = r.toString(16);
     var hexG = g.toString(16);
     var hexB = b.toString(16);
 
     if (hexR.length == 1) {
-        hexR = "0" + hexR;
+        hexR = '0' + hexR;
     }
 
     if (hexG.length == 1) {
-        hexG = "0" + hexG;
+        hexG = '0' + hexG;
     }
 
     if (hexB.length == 1) {
-        hexB = "0" + hexB;
+        hexB = '0' + hexB;
     }
 
-    var hexColor = "#" + hexR + hexG + hexB;
+    var hexColor = '#' + hexR + hexG + hexB;
     return hexColor.toUpperCase();
 }
-
-
-
-
-
