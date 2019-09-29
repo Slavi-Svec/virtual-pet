@@ -18,6 +18,7 @@ body {
     text-align: center;
     height: 525px;
     width: 520px;
+    background: black hidden;
     background: white;
 }
 
@@ -36,7 +37,7 @@ body {
 .bottom-grid,
 .top-grid {
     font-family: comic sans MS;
-  display: flex;
+    display: flex;
 }
 
 .col {
@@ -59,6 +60,16 @@ body {
     position: relative;
     top: 180px;
     visibility: hidden;
+    height: 100px;
+    width: 100px;
+}
+
+#grave-image {
+    position: relative;
+    top: 170px;
+    visibility: hidden;
+    height: 100px;
+    width: 100px;
 }
 
 #food-chicken{
@@ -99,6 +110,9 @@ body {
      animation-name: bounce;
      animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
      animation-duration: 2300ms;
+     height: 100px;
+     width: 100px;
+
     }
     @keyframes bounce {
         0%   { transform: scale(1,1)      translateY(0); }

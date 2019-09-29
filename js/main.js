@@ -19,13 +19,16 @@ let sammy = {
     health: 100,
 }
 
+
+const backScreen = document.getElementById('screen');
 const startButton = document.getElementById('start');
 const eggImage = document.getElementById('egg-image');
+const graveImage = document.getElementById('grave-image');
 const message = document.getElementById('message');
 const healthBar =document.getElementById('health-bar');
 
 const healthDots = document.getElementsByClassName('health-dot');
-const back = document.getElementById('screen');
+
 
 startButton.addEventListener('click', () => {
     setInterval(() => {
@@ -38,14 +41,17 @@ startButton.addEventListener('click', () => {
             }
             if (sammy.health === 40) {
                 healthDots[2].style.display = 'none'
-                document.body.style.backgroundColor =  "#AA0000";
             }
             if (sammy.health === 20) {
                 healthDots[3].style.display = 'none'
+                document.body.style.backgroundColor =  '#AA0000';
             }
             if (sammy.health === 0) {
                 healthDots[4].style.display = 'none'
-                document.body.style.background =  "#AA0000";
+                backScreen.style.visibility = 'visible';
+                document.body.style.background =  'black';
+                eggImage.style.visibility = 'hidden';
+                graveImage.style.visibility = 'visible';
             }
         }
         sammy.health = sammy.health - 20
@@ -88,3 +94,57 @@ const feedMe = document.getElementById('feed');
 feedMe.addEventListener('click', () => {
 document.getElementById('food-chicken').style.display='block';
 })
+
+
+// this code below is the strobe light featture
+
+var bodyElement = document.querySelector("body");
+
+var requestAnimationFrame = window.requestAnimationFrame ||
+                            window.mozRequestAnimationFrame ||
+                            window.webkitRequestAnimationFrame ||
+                            window.msRequestAnimationFrame;
+
+// var delay = 0;
+
+function changeColor() {
+    // delay++;
+
+    if (sammy.health === 20) {
+        bodyElement.style.backgroundColor = getRandomColor();
+        delay = 0;
+    }
+
+    requestAnimationFrame(changeColor);
+}
+changeColor();
+
+function getRandomColor() {
+    var r = Math.floor(Math.random()*256);
+    var g = Math.floor(Math.random()*256);
+    var b = Math.floor(Math.random()*256);
+
+    var hexR = r.toString(16);
+    var hexG = g.toString(16);
+    var hexB = b.toString(16);
+
+    if (hexR.length == 1) {
+        hexR = "0" + hexR;
+    }
+
+    if (hexG.length == 1) {
+        hexG = "0" + hexG;
+    }
+
+    if (hexB.length == 1) {
+        hexB = "0" + hexB;
+    }
+
+    var hexColor = "#" + hexR + hexG + hexB;
+    return hexColor.toUpperCase();
+}
+
+
+
+
+
