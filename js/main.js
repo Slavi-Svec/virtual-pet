@@ -8,7 +8,7 @@ const SAMMYMAXHEALTH = 100;
 
 const clockButtonElement = document.getElementById('clock-button');
 const clock = document.getElementById('clock-face');
-const clockButton = document.getElementById('clock-button');
+
 
 clockButtonElement.addEventListener('click', () => {
     setInterval(() => {
@@ -23,16 +23,30 @@ let sammy = {
 
 
 const backScreen = document.getElementById('screen');
-const startButton = document.getElementById('start');
+// const buttonCol = document.getElementById('col');
+
+const healthBar =document.getElementById('health-bar');
+// Images are here 
 const eggImage = document.getElementById('egg-image');
 const graveImage = document.getElementById('grave-image');
+// buttons are here
+const feedButton = document.getElementById('feed');
+const cleanButton = document.getElementById('clean');
+const trainButton = document.getElementById('train');
+const sleepButton = document.getElementById('sleep');
+const infoButton = document.getElementById('info');
+const startButton = document.getElementById('start');
+const clockButton = document.getElementById('clock-button');
+const resetButton = document.getElementById('reset');
+
 const message = document.getElementById('message');
-const healthBar =document.getElementById('health-bar');
+
 
 const healthDots = document.getElementsByClassName('health-dot');
 
 
 startButton.addEventListener('click', () => {
+
     setInterval(() => {
         for (let i = 0; i < healthDots.length; i++) {
             if (sammy.health === 80) {
@@ -49,16 +63,30 @@ startButton.addEventListener('click', () => {
                 document.body.style.backgroundColor =  '#AA0000';
             }
             if (sammy.health === 0) {
-                healthDots[4].style.display = 'none'
-                backScreen.style.visibility = 'visible';
+                healthDots[4].style.display = 'none';
                 document.body.style.background =  'black';
                 eggImage.style.visibility = 'hidden';
                 graveImage.style.visibility = 'visible';
-                backScreen.style.background =  'black';
+                // all this code need to make dry
+                feedButton.style.background = 'black';
+                feedButton.style.border = 'black';
+                cleanButton.style.background = 'black';
+                cleanButton.style.border = 'black';
+                trainButton.style.background = 'black';
+                trainButton.style.border = 'black';
+                sleepButton.style.background = 'black';
+                sleepButton.style.border = 'black';
+                infoButton.style.background ='black';
+                clockButton.style.background = 'black';
+                clockButton.style.border = 'black';
+                resetButton.style.background = 'black';
+                resetButton.style.border = 'black';
+                startButton.style.background = 'white';
+
             }
         }
         sammy.health = sammy.health - 20
-    }, 2000);
+    }, 1000);
 
     eggImage.style.visibility = 'visible';
     healthBar.style.visibility = 'visible';
@@ -81,9 +109,7 @@ startButton.addEventListener('click', () => {
     }, 4000);
 })
 
-const reset = document.getElementById('reset');
-
-reset.addEventListener('click', () => {
+resetButton.addEventListener('click', () => {
     const userHasClickedOK = confirm('are you sure you want to re-set?');
 
     if (userHasClickedOK) {
@@ -92,9 +118,9 @@ reset.addEventListener('click', () => {
     }
 })
 
-const feedMe = document.getElementById('feed');
 
-feedMe.addEventListener('click', () => {
+
+feedButton.addEventListener('click', () => {
     if (sammy.health >= SAMMYMAXHEALTH) {
         return;
     } else {
@@ -117,7 +143,7 @@ feedMe.addEventListener('click', () => {
 
     setInterval(() => {
         document.getElementById('food-chicken').style.display = 'none';
-    }, 1000);
+    }, 2000);
 })
 
 
@@ -168,3 +194,21 @@ function getRandomColor() {
     var hexColor = '#' + hexR + hexG + hexB;
     return hexColor.toUpperCase();
 }
+// sleep feature
+
+
+    sleepButton.addEventListener('click', function() {
+        if (backScreen.style.backgroundColor == 'black') {
+            backScreen.style.backgroundColor = null;
+        } else {
+            backScreen.style.backgroundColor = 'black';
+        }
+    });
+   
+
+
+
+// train feature
+// trainButton.addEventListener('click', () => {
+// console.log(trainButton);
+// })
