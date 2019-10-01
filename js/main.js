@@ -26,10 +26,12 @@ const backScreen = document.getElementById('screen');
 // const buttonCol = document.getElementById('col');
 
 const healthBar =document.getElementById('health-bar');
-// Images are here 
+// Images are here:
 const eggImage = document.getElementById('egg-image');
 const graveImage = document.getElementById('grave-image');
-// buttons are here
+const startImage = document.getElementById('start-image');
+const sleepzImage = document.getElementById('sleepz-image');
+// buttons are here:
 const feedButton = document.getElementById('feed');
 const cleanButton = document.getElementById('clean');
 const trainButton = document.getElementById('train');
@@ -46,6 +48,7 @@ const healthDots = document.getElementsByClassName('health-dot');
 
 
 startButton.addEventListener('click', () => {
+    graveImage.style.visibility = 'hidden';
 
     setInterval(() => {
         for (let i = 0; i < healthDots.length; i++) {
@@ -77,12 +80,12 @@ startButton.addEventListener('click', () => {
                 sleepButton.style.background = 'black';
                 sleepButton.style.border = 'black';
                 infoButton.style.background ='black';
+                infoButton.style.border ='black';
                 clockButton.style.background = 'black';
                 clockButton.style.border = 'black';
                 resetButton.style.background = 'black';
                 resetButton.style.border = 'black';
                 startButton.style.background = 'white';
-
             }
         }
         sammy.health = sammy.health - 20
@@ -113,9 +116,9 @@ resetButton.addEventListener('click', () => {
     const userHasClickedOK = confirm('are you sure you want to re-set?');
 
     if (userHasClickedOK) {
-        document.getElementById('egg-image').setAttribute('class', '');
-        eggImage.src = 'images/start.png';
+        startImage.style.visibility = 'visible';
     }
+
 })
 
 
@@ -204,11 +207,11 @@ function getRandomColor() {
             backScreen.style.backgroundColor = 'black';
         }
     });
-   
 
-
-
-// train feature
-// trainButton.addEventListener('click', () => {
-// console.log(trainButton);
-// })
+    sleepButton.addEventListener('click', function() {
+    if (sleepzImage.style.visibility == 'visible') {
+        sleepzImage.style.visibility = 'hidden';
+    } else {
+        sleepzImage.style.visibility = 'visible';
+    }
+});

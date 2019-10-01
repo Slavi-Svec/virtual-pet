@@ -37,10 +37,10 @@ body {
 .top-grid {
     display: flex;
 }
+
 .col-button:hover {
     background-color: red;
 }
-
 
 .col {
     font-family: comic sans MS;
@@ -50,8 +50,8 @@ body {
     font-size: 2rem;
     border: 2px solid whitesmoke;
     background-color: pink;
+    outline:none;
 }
-
 #button-wrapper {
     position: absolute;
     width: 100%;
@@ -65,6 +65,12 @@ body {
     width: 100px;
     left: 40%;
 }
+#sleepz-image {
+    visibility: hidden;
+    animation: blink 7s;
+    animation-iteration-count: infinite;
+    position: absolute;
+}
 
 #grave-image {
     position: relative;
@@ -73,6 +79,15 @@ body {
     height: 100px;
     width: 100px;
 }
+#start-image {
+    position: relative;
+    top: 65px;
+    left: -50PX;
+    visibility: hidden;
+    height: 450px;
+    width: 520px;
+}
+
 
 #food-chicken{
    display: none;
@@ -116,7 +131,6 @@ body {
     height: 100px;
     width: 100px;
     margin: 0;
-
 }
 
 @keyframes bounce {
@@ -127,6 +141,20 @@ body {
     57%  { transform: scale(1,1)      translateY(-7px); }
     64%  { transform: scale(1,1)      translateY(0); }
     100% { transform: scale(1,1)      translateY(0); }
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
 }
 
 #health-bar {
@@ -145,3 +173,5 @@ body {
     border-radius: 25%;
     margin: 0.5px;
 }
+
+
