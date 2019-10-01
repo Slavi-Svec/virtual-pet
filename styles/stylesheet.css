@@ -75,17 +75,19 @@ body {
 #grave-image {
     position: relative;
     top: 195px;
+    left: 53%;
     visibility: hidden;
     height: 100px;
     width: 100px;
 }
+
 #start-image {
     position: relative;
     top: 65px;
     left: -50PX;
     visibility: hidden;
     height: 450px;
-    width: 520px;
+    /* width: 520px; */ */
 }
 
 
