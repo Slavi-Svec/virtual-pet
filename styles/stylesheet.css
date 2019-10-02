@@ -62,7 +62,7 @@ body {
     position: absolute;
     bottom: 120px;
     visibility: hidden;
-    width: 100px;
+    width: 80px; 
     left: 40%;
 }
 #sleepz-image {
@@ -70,12 +70,13 @@ body {
     animation: blink 7s;
     animation-iteration-count: infinite;
     position: absolute;
+    top: 120px;
 }
 
 #grave-image {
     position: relative;
     top: 195px;
-    left: 53%;
+    left: 77%;
     visibility: hidden;
     height: 100px;
     width: 100px;
@@ -83,10 +84,20 @@ body {
 
 #start-image {
     position: relative;
-    top: 65px;
-    left: -50PX;
+    top: 72px;
+    left: 100PX;
     visibility: hidden;
-    height: 450px;
+    height: 413px;
+}
+#press-start2 {
+    position: relative;
+    visibility: hidden;
+    height: 150px;
+    width: 300px;
+    left: -320px;
+
+
+
 }
 
 
@@ -171,6 +182,23 @@ body {
     width: 15px;
     height: 15px;
     background: #48CF0A;
+    border-radius: 25%;
+    margin: 0.5px;
+}
+
+#sleep-bar {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.sleep-dot {
+    width: 15px;
+    height: 15px;
+    background: blue;
     border-radius: 25%;
     margin: 0.5px;
 }
