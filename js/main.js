@@ -1,4 +1,3 @@
-
 function getTime() {
     const date = new Date();
     const amOrPm = date.getHours() < 12 ? 'am' : 'pm';
@@ -39,6 +38,8 @@ const graveImage = document.getElementById('grave-image');
 const startImage = document.getElementById('start-image');
 const sleepzImage = document.getElementById('sleepz-image');
 const startImageTwo = document.getElementById('press-start2');
+const CleanImage = document.getElementById('emoji-image');
+
 // buttons are here:
 const feedButton = document.getElementById('feed');
 const cleanButton = document.getElementById('clean');
@@ -54,6 +55,8 @@ const message = document.getElementById('message');
 
 
 
+
+
 startButton.addEventListener('click', () => {
     const audio = new Audio("audio/8bit-happy1.wav");
      audio.play();
@@ -61,7 +64,7 @@ startButton.addEventListener('click', () => {
      sleepzImage.style.visibility = 'hidden';
      backScreen.style.backgroundColor = 'white';
 
-
+// this is the health dots
     setInterval(() => {
         for (let i = 0; i < healthDots.length; i++) {
             if (sammy.health === 80) {
@@ -83,6 +86,8 @@ startButton.addEventListener('click', () => {
                 eggImage.style.visibility = 'hidden';
                 graveImage.style.visibility = 'visible';
                 startImageTwo.style.visibility = 'visible';
+                startImage.style.visibility = 'hidden';
+                sleepBar.style.visibility = 'hidden';
 
                 for (let i = 0; i < buttonCol.length; i++) {
                     buttonCol[i].style.background = 'black';
@@ -91,10 +96,46 @@ startButton.addEventListener('click', () => {
 
                 startButton.style.background = 'white';
             }
-        }
-        sammy.health = sammy.health - 20
-    }, 10000);
 
+        }
+       sammy.health = sammy.health - 20
+    }, 4000);
+// this is the sleep dots
+    setInterval(() => {
+        for (let i = 0; i < healthDots.length; i++) {
+            if (sammy.sleep=== 80) {
+                sleepDots[0].style.display = 'none'
+            }
+            if (sammy.sleep === 60) {
+                sleepDots[1].style.display = 'none'
+            }
+            if (sammy.sleep === 40) {
+                sleepDots[2].style.display = 'none'
+            }
+            if (sammy.sleep === 20) {
+                sleepDots[3].style.display = 'none'
+                // document.body.style.backgroundColor =  '#AA0000';
+            }
+            if (sammy.sleep === 0) {
+                sleepDots[4].style.display = 'none';
+                // document.body.style.background =  'black';
+                // eggImage.style.visibility = 'hidden';
+                // graveImage.style.visibility = 'visible';
+                // startImageTwo.style.visibility = 'visible';
+
+                // for (let i = 0; i < buttonCol.length; i++) {
+                //     buttonCol[i].style.background = 'black';
+                //     buttonCol[i].style.border = 'black';
+                }
+
+                // startButton.style.background = 'white';
+            }
+
+       sammy.sleep = sammy.sleep - 20
+    }, 3000);
+
+
+    sleepBar.style.visibility = 'visible';
     eggImage.style.visibility = 'visible';
     healthBar.style.visibility = 'visible';
     message.innerHTML = 'Please wait for the egg to hatch';
@@ -115,6 +156,9 @@ startButton.addEventListener('click', () => {
     }, 4000);
 })
 
+
+
+// Reset Feature 
 resetButton.addEventListener('click', () => {
     const userHasClickedOK = confirm('are you sure you want to re-set?');
 
@@ -222,19 +266,38 @@ sleepButton.addEventListener('click', function() {
 });
 
 
-sleepButton.addEventListener('click', function() {
-    // const audio = new Audio("audio/sleep-music.wav");
-    // audio.play();
+sleepButton.addEventListener('click', () => {
     const audio = new Audio("audio/sleep1.wav");
     audio.play();
+    if (sammy.sleep >= SAMMYMAXHEALTH) {
+        return;
+    } else {
+        sammy.sleep = sammy.sleep+ 20;
+        if (sammy.sleep === 80) {
+            sleepDots[0].style.display = 'block'
+        }
+        if (sammy.sleep === 60) {
+            sleepDots[1].style.display = 'block'
+        }
+        if (sammy.sleep === 40) {
+            sleepDots[2].style.display = 'block'
+        }
+        if (sammy.sleep === 20) {
+            sleepDots[3].style.display = 'block'
+        }
+    }
 })
-
 
 
 
 clockButtonElement.addEventListener('click', () => {
-   clock.innerHTML = getTime();
+//    clock.innerHTML = getTime();
+healthBar.style.display = 'visible';
+
 })
 
 
-
+cleanButton.addEventListener('click', () => {
+    poopImage.style.display.visibility = 'visible';
+    console.log(cleanButton)
+});

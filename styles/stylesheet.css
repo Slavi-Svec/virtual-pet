@@ -88,6 +88,7 @@ body {
     left: 100PX;
     visibility: hidden;
     height: 413px;
+
 }
 #press-start2 {
     position: relative;
@@ -95,14 +96,16 @@ body {
     height: 150px;
     width: 300px;
     left: -320px;
-
-
-
 }
-
-
 #food-chicken{
    display: none;
+}
+#clean-image {
+    position: relative;
+    top: 330px;
+    left: 150PX;
+    height: 35px;
+    visibility: hidden;
 }
 
 #clock-message-wrapper {
@@ -173,9 +176,11 @@ body {
     width: 100px;
     height: 40px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     visibility: hidden;
+
+    /* z-index: 1; */
 }
 
 .health-dot {
@@ -188,11 +193,13 @@ body {
 
 #sleep-bar {
     width: 100px;
-    height: 40px;
+    height: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 0px;
+    right: 0;
+    top: 30px;
     visibility: hidden;
+
 }
 
 .sleep-dot {
