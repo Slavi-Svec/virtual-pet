@@ -58,8 +58,8 @@ const message = document.getElementById('message');
 
 
 startButton.addEventListener('click', () => {
-    const audio = new Audio("audio/8bit-happy1.wav");
-     audio.play();
+    // const audio = new Audio("audio/8bit-happy1.wav");
+    //  audio.play();
      startImage.style.visibility = 'hidden';
      sleepzImage.style.visibility = 'hidden';
      backScreen.style.backgroundColor = 'white';
@@ -118,14 +118,6 @@ startButton.addEventListener('click', () => {
             }
             if (sammy.sleep === 0) {
                 sleepDots[4].style.display = 'none';
-                // document.body.style.background =  'black';
-                // eggImage.style.visibility = 'hidden';
-                // graveImage.style.visibility = 'visible';
-                // startImageTwo.style.visibility = 'visible';
-
-                // for (let i = 0; i < buttonCol.length; i++) {
-                //     buttonCol[i].style.background = 'black';
-                //     buttonCol[i].style.border = 'black';
                 }
 
                 // startButton.style.background = 'white';
@@ -222,30 +214,13 @@ function changeColor() {
     requestAnimationFrame(changeColor);
 }
 changeColor();
+function getRamdonHexNumber() {
+    return Math.floor(Math.random() * 256).toString(16);
+}
 
 function getRandomColor() {
-    var r = Math.floor(Math.random() * 256);
-    var g = Math.floor(Math.random() * 256);
-    var b = Math.floor(Math.random() * 256);
+    return `#${getRamdonHexNumber()}${getRamdonHexNumber()}${getRamdonHexNumber()}`;
 
-    var hexR = r.toString(16);
-    var hexG = g.toString(16);
-    var hexB = b.toString(16);
-
-    if (hexR.length == 1) {
-        hexR = '0' + hexR;
-    }
-
-    if (hexG.length == 1) {
-        hexG = '0' + hexG;
-    }
-
-    if (hexB.length == 1) {
-        hexB = '0' + hexB;
-    }
-
-    var hexColor = '#' + hexR + hexG + hexB;
-    return hexColor.toUpperCase();
 }
 // sleep feature
 
