@@ -242,8 +242,8 @@ sleepButton.addEventListener('click', function() {
 
 
 sleepButton.addEventListener('click', () => {
-    const audio = new Audio("audio/sleep1.wav");
-    audio.play();
+    // const audio = new Audio("audio/sleep1.wav");
+    // audio.play();
     if (sammy.sleep >= SAMMYMAXHEALTH) {
         return;
     } else {
