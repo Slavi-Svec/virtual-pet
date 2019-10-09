@@ -99,7 +99,7 @@ startButton.addEventListener('click', () => {
 
         }
        sammy.health = sammy.health - 20
-    }, 4000);
+    }, 8000);
 // this is the sleep dots
     setInterval(() => {
         for (let i = 0; i < healthDots.length; i++) {
